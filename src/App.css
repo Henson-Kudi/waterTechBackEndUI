@@ -1,0 +1,155 @@
+.App {
+  position: relative;
+}
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+}
+
+.newProjectForm {
+  display: grid;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2rem;
+  background-color: rgb(2, 2, 34);
+  font-size: 2em;
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+
+.newProjectForm div {
+  display: grid;
+  margin: 0.3rem;
+  justify-content: center;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  font-size: medium;
+}
+
+textarea {
+  width: 20rem;
+  height: 5rem;
+}
+
+.image-container {
+  width: 200px;
+}
+
+.image-container img {
+  max-width: 100px;
+}
+
+.submitOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: unset;
+  font-size: 1rem;
+  background-color: gray;
+}
+
+.btnSubmit {
+  background-color: rgb(31, 31, 187);
+  position: relative;
+}
+
+.btnCancel {
+  background-color: #000000;
+}
+
+.btnSubmitt {
+  position: relative;
+  border: unset;
+  background-color: unset;
+  padding: 0.5rem;
+}
+
+.btnSubmitt span {
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: white;
+  animation: btnWait 1s 0.5s infinite alternate;
+}
+
+input[type="file"] {
+  border: unset;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.elementGrid {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  overflow: hidden;
+}
+
+.elementGrid .imageContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+.elementGrid .imageTitle {
+  position: absolute;
+  bottom: -1rem;
+  width: 100%;
+  background-color: white;
+  padding: 1rem 0.5rem;
+  overflow: hidden;
+  text-transform: capitalize;
+  transition: bottom 0.5s linear;
+  text-align: center;
+}
+
+.fa-trash {
+  color: rgb(194, 34, 34);
+  position: absolute;
+  bottom: 1rem;
+  font-size: larger;
+  right: 1.5rem;
+  visibility: hidden;
+}
+
+.elementGrid:hover .fa-trash {
+  visibility: visible;
+}
+
+@keyframes btnWait {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
